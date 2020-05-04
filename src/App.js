@@ -13,12 +13,16 @@ function App() {
       </header>
       <PageRouter>
         <Switch>
+        <Route path="/meal/recipe">
+            <div>instructions come here...</div>
+          </Route>
           <Route
             path="/category/:id"
             render={props => {
               return (
                 <MealContainer
                   categoryName={props.match.params.id}
+                  categoryDesc={props.location.state.description}
                 />
               );
             }}>
@@ -26,7 +30,6 @@ function App() {
           <Route path="/">
             <CategoryContainer />
           </Route>
-
         </Switch>
       </PageRouter>
 

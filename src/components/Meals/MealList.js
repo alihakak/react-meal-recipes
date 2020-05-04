@@ -13,7 +13,7 @@ const StyledContainer = styled(Container)`
   }
 `;
 
-const MealList = ({ meals }) => {
+const MealList = ({ meals, mealCategory, description }) => {
     return (
         <StyledContainer maxWidth="lg">
             <Grid
@@ -25,8 +25,8 @@ const MealList = ({ meals }) => {
                 component='ul'
             >
                 {meals && meals.map((meal, i ) =>
-                    <Grid item lg={3} md={4} xs={6} key={`cat-${i}`}>
-                        <Link to={{ pathname: `recipe/` }}>
+                    <Grid item lg={3} md={4} xs={6} key={`ml-${i}`}>
+                        <Link to={{ pathname: `/meal/recipe` }}>
                             <GridListTile key={meal.id} cols={1}>
                                 <img src={meal.image} alt={meal.title} />
                                 <GridListTileBar title={meal.title} />
