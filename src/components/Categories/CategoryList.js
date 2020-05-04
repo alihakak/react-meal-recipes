@@ -1,19 +1,32 @@
 import React from 'react';
-import { Container, Grid, GridList, GridListTile, GridListTileBar, makeStyles } from '@material-ui/core';
+import styled from "styled-components";
+import { Container, Grid, GridListTile, GridListTileBar, makeStyles } from '@material-ui/core';
 
 import { Link } from "react-router-dom";
+const StyledContainer = styled(Container)`
+  align-content: center;
+  justify-content: center;
+  list-style: none;
+  ul {
+      padding:0;
+      li { list-style: none;}
+  }
+`;
+
+
 const CategoryList = ({ categories }) => {
     return (
-        <Container maxWidth="lg">
+        <StyledContainer maxWidth="lg">
             <Grid
                 container
                 direction="row"
                 justify="space-between"
                 alignItems="center"
                 spacing={2}
+                component='ul'
             >
-                {categories && categories.map(category =>
-                    <Grid item lg={3} md={4} xs={6} >
+                {categories && categories.map((category, i ) =>
+                    <Grid item lg={3} md={4} xs={6} key={`cat-${i}`}>
                         <Link to={{ pathname: `category/${category.title}` }}>
                             <GridListTile key={category.id} cols={1}>
                                 <img src={category.image} alt={category.title} />
@@ -23,7 +36,7 @@ const CategoryList = ({ categories }) => {
                     </Grid>
                 )}
             </Grid>
-        </Container>
+        </StyledContainer>
     )
 };
 export default CategoryList;

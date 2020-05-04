@@ -20,12 +20,12 @@ const CategoryContainer = () => {
         if (isLoading) {
             fetchData();
         }
-    }, []);
-
+    },[isLoading]);
+ 
     if (isLoading) {
         return <div>Loading...</div>
     }
-    else
+    else if(!hasError)
         return (categories.length > 0 &&
             <CategoryList categories={categories}></CategoryList>
         );
