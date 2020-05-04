@@ -17,7 +17,6 @@ const CategoryContainer = () => {
                 setHasError(true);
             }
         };
-
         if (isLoading) {
             fetchData();
         }
