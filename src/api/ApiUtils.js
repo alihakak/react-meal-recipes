@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { normalizeCategories } from './ApiNormalizers';
+import { normalizeCategories, normalizeMeals } from './ApiNormalizers';
 
 export const getAllCategories = async () => {
     // Get All Gategories
@@ -14,21 +14,19 @@ export const getAllCategories = async () => {
 
 export const getMealsByCategoryName = async (categoryName) => {
     // Get Category by Name
-    axios.get(
+    return await axios.get(
         'https://www.themealdb.com/api/json/v1/1/filter.php', {
         params: {
             c: categoryName
         }
     })
-        .then(function (response) {
+        .then(meals => {
             // handle success
-            console.log(response);
+            return normalizeMeals(meals.data)
         })
         .catch(function (error) {
             // handle error
-            console.log(error);
+            console.log('API: Error occured in fetching meals: ', error);
         })
-        .then(function () {
-            // always executed
-        });
+
 }

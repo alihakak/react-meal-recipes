@@ -9,3 +9,14 @@ export const normalizeCategories = resp => {
       };
     });
   };
+
+  export const normalizeMeals = resp => {
+    if (!resp.meals) return null;
+    return resp.meals.map(meal => {
+      return {
+        id: meal.idMeal,
+        title: meal.strMeal,
+        image: meal.strMealThumb,
+      };
+    });
+  };

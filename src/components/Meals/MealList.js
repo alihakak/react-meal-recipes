@@ -13,7 +13,7 @@ const StyledContainer = styled(Container)`
   }
 `;
 
-const CategoryList = ({ categories }) => {
+const MealList = ({ meals }) => {
     return (
         <StyledContainer maxWidth="lg">
             <Grid
@@ -24,12 +24,12 @@ const CategoryList = ({ categories }) => {
                 spacing={2}
                 component='ul'
             >
-                {categories && categories.map((category, i ) =>
+                {meals && meals.map((meal, i ) =>
                     <Grid item lg={3} md={4} xs={6} key={`cat-${i}`}>
-                        <Link to={{ pathname: `category/${category.title}` }}>
-                            <GridListTile key={category.id} cols={1}>
-                                <img src={category.image} alt={category.title} />
-                                <GridListTileBar title={category.title} />
+                        <Link to={{ pathname: `recipe/` }}>
+                            <GridListTile key={meal.id} cols={1}>
+                                <img src={meal.image} alt={meal.title} />
+                                <GridListTileBar title={meal.title} />
                             </GridListTile>
                         </Link>
                     </Grid>
@@ -38,4 +38,4 @@ const CategoryList = ({ categories }) => {
         </StyledContainer>
     )
 };
-export default CategoryList;
+export default MealList;
