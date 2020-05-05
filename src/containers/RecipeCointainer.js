@@ -54,9 +54,9 @@ const RecipeContainer = ({ mealId }) => {
             <>
                 <RecipeHeadLine>
                     <h4>
-                    {mealRecipe.title} | {mealRecipe.category} 
+                    {mealRecipe.category} | {mealRecipe.title}
                     </h4>
-                    <p> Origin: {mealRecipe.origin}  - Tags: {mealRecipe.tags} </p>
+                    <p> Origin:  {mealRecipe.origin} - Tags: {mealRecipe.tags} </p>
                 </RecipeHeadLine>
                 <Recipe mealRecipe={mealRecipe}></Recipe>
             </>

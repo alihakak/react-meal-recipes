@@ -15,13 +15,13 @@ const CategoryHeadLine = styled.div`
         margin: 0;
     }
     p {
-        min-height: 40px;
+        min-height: 30px;
         padding: 15px;
         display: flex;
         flex-direction: row;
         border-bottom: 3px solid purple; 
         border-top: 3px solid silver;
-        font-size: 18px;
+        font-size: 20px;
         text-align: left;
     }
 
