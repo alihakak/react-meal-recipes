@@ -32,6 +32,11 @@ const StyledAdditiveGridItem = styled(Grid)`
   border-bottom: 1px purple solid;
   width:50%;
 `;
+/**
+ * Sub component to display ingredient section right side of the video. 
+ * Used Styled-Component to customize the Grid look.
+ * @param {ingredients} param0 
+ */
 const IngredientsList = ({ ingredients }) => {
     return (
         <StyledContainer maxWidth="lg" tabIndex={0}>

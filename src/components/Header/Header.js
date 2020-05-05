@@ -19,12 +19,17 @@ const HeaderContainer = styled.div`
     }    
 `;
 
+/**
+ * Renders Main application header
+ * @param {title} param0 
+ * @param {imgSrc} param01
+ */
 const Header = ({ title, imgSrc }) => {
     return (
         <HeaderContainer>
             <header className="App-header">
                 {imgSrc && <img src={imgSrc} alt={title}/>}
-                <h1>  {title} </h1>
+                <h1> {title}</h1>
             </header>
         </HeaderContainer>
     )

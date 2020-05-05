@@ -13,7 +13,7 @@ const StyledContainer = styled(Container)`
       li { list-style: none;}
   }
 `;
-const useStyles = makeStyles( _ => ({
+const useStyles = makeStyles(_ => ({
     root: {
         flexGrow: 1,
         width: '95%',
@@ -44,6 +44,11 @@ const useStyles = makeStyles( _ => ({
     }
 }));
 
+/**
+ * Renders the Meal Recipe it includes few sub components as video / ingredients 
+ * Alternative: Text instructions can be moved to a separate component.
+ * @param {mealRecipe} param0 
+ */
 const Recipe = ({ mealRecipe }) => {
     const classes = useStyles();
     return (
@@ -52,21 +57,19 @@ const Recipe = ({ mealRecipe }) => {
                 <Grid container >
                     <Grid item xs={12} sm={6} >
                         <div className={classes.videoWrapper} >
-                            <ReactPlayer  controls={true} url={mealRecipe.videoSrc} width='100%' />
+                            <ReactPlayer controls={true} url={mealRecipe.videoSrc} width='100%' />
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <h3 className={classes.ingHeader}  > Ingredients...</h3>
+                        <h3 className={classes.ingHeader}> Ingredients...</h3>
                         <Ingredients ingredients={mealRecipe.ingredients} ></Ingredients>
                     </Grid>
-                    <Grid item xs={12} className={classes.insWrap} >
+                    <Grid item xs={12} className={classes.insWrap}>
                         <h3 className={classes.insHeader}>How to cook...</h3>
                         <p className={classes.insP}>
                             {mealRecipe.instructions}
                         </p>
                     </Grid>
-
-
                 </Grid>
             </div>
         </StyledContainer>

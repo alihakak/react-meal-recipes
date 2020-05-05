@@ -12,7 +12,11 @@ const StyledContainer = styled(Container)`
       li { list-style: none;}
   }
 `;
-
+/**
+ * Categories List
+ * Component renders the categories in tile
+ * Path to Meals for each category
+ */
 const CategoryList = ({ categories }) => {
     return (
         <StyledContainer maxWidth="lg">
