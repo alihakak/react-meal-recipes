@@ -28,8 +28,8 @@ export const normalizeMealRecipe = resp => {
         for (let i = 1; i <= 20; i++) {
             if (!meal[`strIngredient${i}`]) continue;
             ingredients.push({
-                ingredient: meal[`strIngredient${i}`],
-                measurement: meal[`strMeasure${i}`]
+                additive: meal[`strIngredient${i}`],
+                amount: meal[`strMeasure${i}`]
             });
         }
 

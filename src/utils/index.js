@@ -1,3 +1,6 @@
+
+// Shuffles an array 
+// Usage: Every time user sees different order for foods on Category and Meals page.
 export const shuffleArray = (arr) => {
     var i,
         j,
@@ -8,6 +11,5 @@ export const shuffleArray = (arr) => {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-    console.log('suffled ', arr);
     return arr;
 };

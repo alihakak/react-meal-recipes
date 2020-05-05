@@ -20,7 +20,7 @@ const MealList = ({ meals, mealCategory, description }) => {
                 container
                 direction="row"
                 justify="space-between"
-                alignItems="left"
+                alignItems="center"
                 spacing={2}
                 component='ul'
             >
