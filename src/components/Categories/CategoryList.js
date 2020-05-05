@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import { Container, Grid, GridListTile, GridListTileBar, makeStyles } from '@material-ui/core';
+import { Container, Grid, GridListTile, GridListTileBar } from '@material-ui/core';
 
 import { Link } from "react-router-dom";
 const StyledContainer = styled(Container)`

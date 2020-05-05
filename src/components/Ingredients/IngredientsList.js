@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactPlayer from 'react-player'
 import styled from "styled-components";
-import { Container, Grid, makeStyles } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 
 const StyledContainer = styled(Container)`
   align-content: center;
@@ -12,10 +11,18 @@ const StyledContainer = styled(Container)`
       li { list-style: none;}
   }
 `;
+const InredientContainer = styled(Grid)`
+ width:100%;
+ display:flex;
+ flex-direction:row;
+`;
+
 const StyledAmountGridItem = styled(Grid)`
-  text-align: center;
+  text-align: right;
   padding-left: 5px;
   color: green;
+  width:50%;
+  border-bottom: 1px silver dashed;
 `;
 
 const StyledAdditiveGridItem = styled(Grid)`
@@ -23,6 +30,7 @@ const StyledAdditiveGridItem = styled(Grid)`
   padding-left: 5px;
   color: gray;
   border-bottom: 1px purple solid;
+  width:50%;
 `;
 const IngredientsList = ({ ingredients }) => {
     return (
@@ -30,20 +38,19 @@ const IngredientsList = ({ ingredients }) => {
             <Grid
                 container
                 direction="row"
-                justify="space-between"
                 alignItems="center"
                 spacing={2}
-                component='ul'
+                component='div'
             >
                 {ingredients && ingredients.map((item, i) =>
-                    <>
-                        <StyledAdditiveGridItem item lg={3} md={3} sm={3} xs={6} tabIndex={i+1} key={`add-${i}`}>
-                            {item.additive}
-                        </StyledAdditiveGridItem>
-                        <StyledAmountGridItem item lg={3} md={3} sm={3} xs={6} tabIndex={i+2} key={`amnt-${i}`}>
-                            {item.amount}
-                        </StyledAmountGridItem>
-                    </>
+                <InredientContainer item xs={6} key={`ic-${i}`}>
+                    <StyledAdditiveGridItem item xs={6} tabIndex={i + 1} key={`add-${i}`}>
+                        {item.additive}
+                    </StyledAdditiveGridItem>
+                    <StyledAmountGridItem item xs={6} tabIndex={i + 2} key={`amnt-${i}`}>
+                        {item.amount}
+                    </StyledAmountGridItem>
+                </InredientContainer>
                 )}
             </Grid>
         </StyledContainer>

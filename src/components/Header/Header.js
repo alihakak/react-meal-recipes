@@ -23,7 +23,7 @@ const Header = ({ title, imgSrc }) => {
     return (
         <HeaderContainer>
             <header className="App-header">
-                {imgSrc && <img src={imgSrc} />}
+                {imgSrc && <img src={imgSrc} alt={title}/>}
                 <h1>  {title} </h1>
             </header>
         </HeaderContainer>
