@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { isMobile } from "react-device-detect";
 
 const HeaderContainer = styled.div`
-    padding: 0;    
+    padding: 0;   
     color: #fff;
     img {
         width: 100%;
@@ -15,7 +15,7 @@ const HeaderContainer = styled.div`
     position: absolute;
     top: ${isMobile ? '5%' : '15%'};
     left: 50%;
-    transform: translate(-50%, -50%);    
+    transform: translate(-50%, -50%);   
     }    
 `;
 

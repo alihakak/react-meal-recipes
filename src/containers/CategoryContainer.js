@@ -1,7 +1,30 @@
 import React, { useState, useEffect } from 'react';
+import styled from "styled-components";
 import { getAllCategories } from "../api/ApiUtils";
 import CategoryList from "../components/Categories/CategoryList";
+import { appStrings } from '../resources/strings';
 
+const CategoryHeadLine = styled.div`
+    margin : 0 auto;
+    margin: 5%;
+    h4 {
+        padding: 15px;
+        color: purple;
+        text-align: left;
+        font-size: 24px;
+    }
+    p {
+        min-height: 40px;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        border-bottom: 3px solid purple; 
+        border-top: 3px solid silver;
+        font-size: 18px;
+        text-align: left;
+    }
+
+`;
 const CategoryContainer = () => {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -20,14 +43,22 @@ const CategoryContainer = () => {
         if (isLoading) {
             fetchData();
         }
-    },[isLoading]);
- 
+    }, [isLoading]);
+
     if (isLoading) {
         return <div>Loading...</div>
     }
-    else if(!hasError)
+    else if (!hasError)
         return (categories.length > 0 &&
-            <CategoryList categories={categories}></CategoryList>
+            <>
+                <CategoryHeadLine>
+                    <h4>
+                        {appStrings.category.headerText}
+                    </h4>
+                    <p> {appStrings.category.headerIntro}</p>
+                </CategoryHeadLine>
+                <CategoryList categories={categories}></CategoryList>
+            </>
         );
 };
 

@@ -20,13 +20,13 @@ const MealList = ({ meals, mealCategory, description }) => {
                 container
                 direction="row"
                 justify="space-between"
-                alignItems="center"
+                alignItems="left"
                 spacing={2}
                 component='ul'
             >
                 {meals && meals.map((meal, i ) =>
                     <Grid item lg={4} md={6} sm={4} xs={12} key={`ml-${i}`}>
-                        <Link to={{ pathname: `/meal/recipe` }}>
+                        <Link to={{ pathname: `/meal/recipe/` }}>
                             <GridListTile key={meal.id} cols={1}>
                                 <img src={meal.image} alt={meal.title} />
                                 <GridListTileBar title={meal.title} />

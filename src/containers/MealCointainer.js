@@ -7,7 +7,7 @@ const MealHadline = styled.div`
     margin : 0 auto;
     margin: 5%;
     h4 {
-        padding-top: 30px;
+        padding: 15px;
         color:red;
         text-align: left;
         font-size: 24px;

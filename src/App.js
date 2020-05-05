@@ -5,12 +5,12 @@ import HeaderBackground from './themes/assets/header-1.jpg'
 import CategoryContainer from './containers/CategoryContainer';
 import MealContainer from './containers/MealCointainer';
 import { BrowserRouter as PageRouter, Switch, Route } from "react-router-dom";
-import { appLabels } from './utils/constants';
+import { appStrings } from './resources/strings';
 
 function App() {
   return (
     <div className="App">
-        <Header title={appLabels.headerText} imgSrc={HeaderBackground} />
+        <Header title={appStrings.headerText} imgSrc={HeaderBackground} />
       <PageRouter>
         <Switch>
         <Route path="/meal/recipe">
