@@ -12,10 +12,11 @@ const CategoryHeadLine = styled.div`
         color: purple;
         text-align: left;
         font-size: 24px;
+        margin: 0;
     }
     p {
         min-height: 40px;
-        padding: 20px;
+        padding: 15px;
         display: flex;
         flex-direction: row;
         border-bottom: 3px solid purple; 

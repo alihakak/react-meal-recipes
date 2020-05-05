@@ -11,10 +11,11 @@ const MealHadline = styled.div`
         color:red;
         text-align: left;
         font-size: 24px;
+        margin: 0;
     }
     p {
         min-height:50px;
-        padding: 20px;
+        padding: 15px;
         display: flex;
         flex-direction: row;
         border-bottom: 3px solid red; 

@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { normalizeCategories, normalizeMeals } from './ApiNormalizers';
-import { shuffleArray} from '../utils';
+import { normalizeCategories, normalizeMeals, normalizeMealRecipe } from './ApiNormalizers';
+import { shuffleArray } from '../utils';
 
 export const getAllCategories = async () => {
     // Get All Gategories
@@ -31,7 +31,7 @@ export const getMealsByCategoryName = async (categoryName) => {
         })
 }
 
-export const getMealRecipeByMealId = async (mealId) => {
+export const getRecipeByMealId = async (mealId) => {
     // Get Category by Name
     return await axios.get(
         'https://www.themealdb.com/api/json/v1/1/lookup.php', {
@@ -41,7 +41,7 @@ export const getMealRecipeByMealId = async (mealId) => {
     })
         .then(meals => {
             // handle success
-            return normalizeMeals(meals.data)
+            return normalizeMealRecipe(meals.data)
         })
         .catch(function (error) {
             // handle error
