@@ -3,16 +3,26 @@ import styled from "styled-components";
 import { getMealsByCategoryName } from "../api/ApiUtils";
 import MealList from "../components/Meals/MealList";
 
-const HealHadline = styled.div`
-    min-height:80px;
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-    border-bottom: 3px solid red;
+const MealHadline = styled.div`
+    margin : 0 auto;
     margin: 5%;
-    border-top: 3px solid silver;
-    font-size: 18px;
-    text-align: left;
+    h4 {
+        padding-top: 30px;
+        color:red;
+        text-align: left;
+        font-size: 24px;
+    }
+    p {
+        min-height:50px;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        border-bottom: 3px solid red; 
+        border-top: 3px solid silver;
+        font-size: 18px;
+        text-align: left;
+    }
+
 `;
 
 const MealContainer = ({ categoryName, categoryDesc }) => {
@@ -41,11 +51,16 @@ const MealContainer = ({ categoryName, categoryDesc }) => {
     else if (!hasError)
         return (meals && meals.length > 0 &&
             <>
-            <HealHadline>{categoryDesc}</HealHadline>
-            <MealList meals={meals}
-                mealCategory={categoryName}
-                description={categoryDesc} >
-            </MealList>
+                <MealHadline>
+                    <h4>
+                        {categoryName}
+                    </h4>
+                    <p>{categoryDesc}</p>
+                </MealHadline>
+                <MealList meals={meals}
+                    mealCategory={categoryName}
+                    description={categoryDesc} >
+                </MealList>
             </>
         );
 };

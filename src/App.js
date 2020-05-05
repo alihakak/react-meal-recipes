@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
-import MainHeader from './components/AppHeader';
+import Header from './components/Header';
+import HeaderBackground from './themes/assets/header-1.jpg'
 import CategoryContainer from './containers/CategoryContainer';
 import MealContainer from './containers/MealCointainer';
 import { BrowserRouter as PageRouter, Switch, Route } from "react-router-dom";
+import { appLabels } from './utils/constants';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <MainHeader />
-      </header>
+        <Header title={appLabels.headerText} imgSrc={HeaderBackground} />
       <PageRouter>
         <Switch>
         <Route path="/meal/recipe">

@@ -25,7 +25,7 @@ const CategoryList = ({ categories }) => {
                 component='ul'
             >
                 {categories && categories.map((category, i ) =>
-                    <Grid item lg={3} md={4} xs={6} key={`cat-${i}`}>
+                    <Grid item lg={3} md={4} sm={4} xs={6} key={`cat-${i}`}>
                         <Link to={{ pathname: `/category/${category.title}`, state: { description: category.description} } }>
                             <GridListTile key={category.id} cols={1}>
                                 <img src={category.image} alt={category.title} />

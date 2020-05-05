@@ -25,7 +25,7 @@ const MealList = ({ meals, mealCategory, description }) => {
                 component='ul'
             >
                 {meals && meals.map((meal, i ) =>
-                    <Grid item lg={4} md={6} xs={12} key={`ml-${i}`}>
+                    <Grid item lg={4} md={6} sm={4} xs={12} key={`ml-${i}`}>
                         <Link to={{ pathname: `/meal/recipe` }}>
                             <GridListTile key={meal.id} cols={1}>
                                 <img src={meal.image} alt={meal.title} />
