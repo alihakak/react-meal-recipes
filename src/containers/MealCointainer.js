@@ -25,7 +25,14 @@ const MealHadline = styled.div`
     }
 
 `;
-
+const NavLink = styled.a`
+text-decoration: none;
+color: #777;
+cursor: pointer;
+&:hover {
+   color: purple;
+  }
+`;;
 const MealContainer = ({ categoryName, categoryDesc }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
@@ -53,8 +60,9 @@ const MealContainer = ({ categoryName, categoryDesc }) => {
         return (meals && meals.length > 0 &&
             <>
                 <MealHadline>
+
                     <h4>
-                        {categoryName}
+                        <NavLink href='/'>{`Categories`}</NavLink> {` | ${categoryName}`}
                     </h4>
                     <p>{categoryDesc}</p>
                 </MealHadline>

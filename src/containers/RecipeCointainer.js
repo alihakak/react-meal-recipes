@@ -28,7 +28,7 @@ const RecipeHeadLine = styled.div`
 `;
 const NavLink = styled(Link)`
     text-decoration: none;
-    color: #4CBB17;
+    color: #777;
     cursor: pointer;
     &:hover {
        color: red;
