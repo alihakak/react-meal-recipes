@@ -34,6 +34,12 @@ const NavLink = styled(Link)`
        color: red;
       }
 `;
+/**
+ * Fetch recipe for the selected MealId
+ * Passes data to the Recipe Component for display.
+ * @param {mealId} param0 
+ * @param {categoryDesc} param01
+ */
 const RecipeContainer = ({ mealId, categoryDesc }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);

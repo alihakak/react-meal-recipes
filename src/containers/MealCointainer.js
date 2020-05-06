@@ -32,7 +32,13 @@ cursor: pointer;
 &:hover {
    color: purple;
   }
-`;;
+`;
+
+/**
+ * Fetch meals by category name and pass data to the MealsList for display.
+ * @param {categoryName} param0 
+ * @param {categoryName} param01
+ */
 const MealContainer = ({ categoryName, categoryDesc }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
