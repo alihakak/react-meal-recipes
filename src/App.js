@@ -20,17 +20,18 @@ function App() {
               return (
                 <RecipeContainer
                   mealId={props.match.params.id}
+                  categoryDesc={props.location.state ? props.location.state.description : '' }
                 />
               );
             }}>
           </Route>
           <Route
-            path="/category/:id"
+            path="/meals/:id"
             render={props => {
               return (
                 <MealContainer
                   categoryName={props.match.params.id}
-                  categoryDesc={props.location.state.description}
+                  categoryDesc={props.location.state ? props.location.state.description : '' }
                 />
               );
             }}>

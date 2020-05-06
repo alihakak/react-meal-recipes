@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import { getRecipeByMealId } from "../api/ApiUtils";
 import Recipe from "../components/Recipe/Recipe";
+import { Link } from "react-router-dom";
 
 const RecipeHeadLine = styled.div`
     margin : 0 auto;
@@ -25,8 +26,15 @@ const RecipeHeadLine = styled.div`
     }
 
 `;
-
-const RecipeContainer = ({ mealId }) => {
+const NavLink = styled(Link)`
+    text-decoration: none;
+    color: #4CBB17;
+    cursor: pointer;
+    &:hover {
+       color: red;
+      }
+`;
+const RecipeContainer = ({ mealId, categoryDesc }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
     const [mealRecipe, setMealRecipe] = useState(null);
@@ -54,7 +62,10 @@ const RecipeContainer = ({ mealId }) => {
             <>
                 <RecipeHeadLine>
                     <h4>
-                    {mealRecipe.category} | {mealRecipe.title}
+                        <NavLink to={{ pathname: `/meals/${mealRecipe.category}`, state: { description: categoryDesc } }}>
+                            {mealRecipe.category}
+                        </NavLink>
+                          {` | ${mealRecipe.title}`}
                     </h4>
                     <p> Origin:  {mealRecipe.origin} - Tags: {mealRecipe.tags} </p>
                 </RecipeHeadLine>

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import { Container, Grid, GridListTile, GridListTileBar } from '@material-ui/core';
-
 import { Link } from "react-router-dom";
+
 const StyledContainer = styled(Container)`
   align-content: center;
   justify-content: center;
@@ -30,7 +30,7 @@ const CategoryList = ({ categories }) => {
             >
                 {categories && categories.map((category, i ) =>
                     <Grid item lg={3} md={4} sm={4} xs={6} key={`cat-${i}`}>
-                        <Link to={{ pathname: `/category/${category.title}`, state: { description: category.description} } }>
+                        <Link to={{ pathname: `/meals/${category.title}`, state: { description: category.description} } }>
                             <GridListTile key={category.id} cols={1}>
                                 <img src={category.image} alt={category.title} />
                                 <GridListTileBar title={category.title} />
