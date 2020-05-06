@@ -22,8 +22,8 @@ export const normalizeMeals = resp => {
 };
 
 export const normalizeMealRecipe = resp => {
-    if (!resp.meals) return null;
-    return resp.meals.map(meal => {
+    const { meals } = resp;
+    return meals.map(meal => {
         let ingredients = [];
         for (let i = 1; i <= 20; i++) {
             if (!meal[`strIngredient${i}`]) continue;
@@ -44,5 +44,5 @@ export const normalizeMealRecipe = resp => {
             tags: meal.strTags,
             videoSrc: meal.strYoutube
         };
-    });
+    })
 }

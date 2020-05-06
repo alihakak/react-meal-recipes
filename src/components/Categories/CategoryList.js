@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const StyledContainer = styled(Container)`
   align-content: center;
   justify-content: center;
+  text-align: center;
   list-style: none;
   ul {
       padding:0;
