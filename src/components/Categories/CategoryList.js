@@ -12,6 +12,10 @@ const StyledContainer = styled(Container)`
       li { list-style: none;}
   }
 `;
+const StyledImage = styled.img `
+object-fit: cover; 
+`;
+
 /**
  * Categories List
  * Component renders the categories in tile
@@ -23,7 +27,6 @@ const CategoryList = ({ categories }) => {
             <Grid
                 container
                 direction="row"
-                justify="space-between"
                 alignItems="center"
                 spacing={2}
                 component='ul'
@@ -32,7 +35,7 @@ const CategoryList = ({ categories }) => {
                     <Grid item lg={3} md={4} sm={4} xs={6} key={`cat-${i}`}>
                         <Link to={{ pathname: `/meals/${category.title}`, state: { description: category.description} } }>
                             <GridListTile key={category.id} cols={1}>
-                                <img src={category.image} alt={category.title} />
+                                <StyledImage src={category.image} alt={category.title} />
                                 <GridListTileBar title={category.title} />
                             </GridListTile>
                         </Link>
