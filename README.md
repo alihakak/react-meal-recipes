@@ -1,9 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Please install packages by running: 
+Please install packages by running. 
 
 ### `npm install`
-
 
 ## Available Scripts
 

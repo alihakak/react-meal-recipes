@@ -60,7 +60,6 @@ const MealContainer = ({ categoryName, categoryDesc }) => {
         return (meals && meals.length > 0 &&
             <>
                 <MealHadline>
-
                     <h4>
                         <NavLink href='/'>{`Categories`}</NavLink> {` | ${categoryName}`}
                     </h4>
