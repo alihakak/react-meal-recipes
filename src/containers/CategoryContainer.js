@@ -26,6 +26,10 @@ const CategoryHeadLine = styled.div`
     }
 
 `;
+/**
+ * Container for the category list.
+ * Connects and fetch data and passes to the List component for display.
+ */
 const CategoryContainer = () => {
 
     const [isLoading, setIsLoading] = useState(true);
