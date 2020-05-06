@@ -67,7 +67,7 @@ const MealContainer = ({ categoryName, categoryDesc }) => {
             <>
                 <MealHadline>
                     <h4>
-                        <NavLink href='/'>{`Categories`}</NavLink> {` | ${categoryName}`}
+                        <NavLink href='http://digicode.ca/meal-recipe/'>{`Categories`}</NavLink> {` | ${categoryName}`}
                     </h4>
                     <p>{categoryDesc}</p>
                 </MealHadline>
