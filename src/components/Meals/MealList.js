@@ -11,8 +11,11 @@ const StyledContainer = styled(Container)`
       padding:0;
       li { list-style: none;}
   }
-`;
 
+`;
+const StyledImage = styled.img `
+max-height: 600px;
+`;
 /**
  * Meals List by for a category comes here in a prop
  * Component renders the meals with a path to their recipe, 
@@ -33,7 +36,7 @@ const MealList = ({ meals, description }) => {
                     <Grid item lg={4} md={6} sm={4} xs={12} key={`ml-${i}`}>
                         <Link to={{ pathname: `/meal/recipe/${meal.id}` , state: { description: description}  }}>
                             <GridListTile key={meal.id} cols={1}>
-                                <img src={meal.image} alt={meal.title} />
+                                <StyledImage src={meal.image} alt={meal.title} />
                                 <GridListTileBar title={meal.title} />
                             </GridListTile>
                         </Link>
